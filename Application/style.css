@@ -1,0 +1,358 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    /* background-color: #f1f1f1; */
+    font-family:"Cairo", sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.6);
+    background:rgba(0, 0, 0, 0.1);
+    }
+/* ----------------------------------------------------header------------------------------------------------------------ */
+.header{
+    background-color: rgba(8, 0, 244, 0.715);
+    color: #0202028d;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo{
+   display: block;
+   text-align: center;
+   padding: 12px 0;
+   font-size: 24px;
+}
+
+.header-nav{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.header-nav a{
+   display: inline-block;
+   padding: 0 12px;
+}
+
+.header a {
+    transition: color .3s;
+    font-weight: bold;
+}
+
+.header a:hover{
+    color: #020202c5;
+    opacity: 1;
+}
+
+
+/* ------------------------------------------------------Main-------------------------------------------------------------- */
+.main{
+    /* background-color: bisque; */
+    padding: 10px 15px;
+    /* padding-top: 10px;
+    max-width: 1080px; */
+    margin-left: auto;
+    margin-right: auto;
+
+}
+ .site{
+    margin-top: 15px;
+    margin-bottom: 15px;
+ }
+
+ /*---------------------sidebar--------------------*/
+
+.sidebar{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    background: rgba(4, 125, 238, 0.604);
+    font-size: 14px;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.sidebar a{
+    display: block;
+    border: solid 1px transparent;
+    padding: 0.6em 0;
+    width: 50%;
+    transition: .3s;
+    padding-left: 10px;
+}
+
+.sidebar a:hover{
+    /* border: solid 1px white; */
+    border-radius: 2px;
+    background: rgba(4, 125, 238, 0.733);
+    color: rgba(0, 0, 0, 1);
+}
+
+.sidebar a::before{
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 8px;
+    opacity: 0.6;
+    background: url(images/icons/home.svg) center center / contain no-repeat;
+}
+
+.sidebar .message::before{
+    background: url(images/icons/message.svg) center center / contain no-repeat;
+}
+
+.sidebar .event::before{
+    background: url(images/icons/calendar.svg) center center / contain no-repeat;
+}
+
+.sidebar .group::before{
+    background: url(images/icons/group.svg) center center / contain no-repeat;
+}
+
+.sidebar a:hover::before{
+    opacity: 1;
+}
+
+/*---------------------card--------------------*/
+.card{
+    border: solid 1px #DBDBDB;
+    border-radius: 5px;
+    background: #FFF;
+    margin-bottom: 14px;
+}
+
+.video{
+    width: 100%;
+}
+
+.card-header{
+    padding: 10px;
+    position: relative;
+}
+
+.card-header-avatar{
+    padding-left: 65px;
+}
+
+.card-avatar{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+.card-title{
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+    margin: 5px 0;
+}
+
+.card-date{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.card-body{
+    padding: 0 10px 15px 10px;
+}
+
+.card-body a{
+    color: #34AAFF;
+    text-decoration: underline;
+}
+
+.card-body .fullwidth{
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.card-body p:first-child{
+    margin-top: 0;
+}
+
+.card-body p:last-child{
+    margin-bottom: 0;
+}
+
+.card-footer{
+    font-size: 12px;
+    color: #dbdbdb;
+    display: flex;
+    /* ----> Other option to space comments box <----
+     justify-content: space-between; */
+    padding: 10px 10px;
+    border-top: solid 1px #DBDBDB;
+}
+
+
+.card-footer a:hover,
+.card-footer a:hover::before{
+    text-decoration: underline;
+    color: #000;
+    opacity: 1;
+}
+
+ .card-comment{
+    margin-left: auto;
+}
+
+.card-like a::before,
+.card-comment a::before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -3px;
+    background: url(images/icons/like-it.svg) center center / 20px 18px no-repeat;
+    opacity: 0.5;
+}
+
+.card-comment a::before{
+    background: url(images/icons/comment.svg) center center / 18px 15px no-repeat;
+}
+
+/*---------------------Aside--------------------*/
+.profil{
+    display: none;
+}
+.aside-title{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.87);
+    /* border-bottom: solid 2px #000; */
+    margin-bottom: 18px;
+    margin-top: 30px;
+}
+
+.aside-title::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 4px;
+    background: #000;
+}
+
+
+.aside a:hover{
+    text-decoration: underline;
+    opacity: 1;
+ }
+
+.friends{
+    display: flex;
+    margin: 15px 0;
+ }
+
+ .friend-body{
+    display: flex;
+    flex-direction: column;
+ }
+
+.friend-avatar{
+    width: 73px;
+    height: 73px;
+    flex: none;
+    margin-right: 10px; 
+}
+
+.friend-name{
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2e2d2d;
+}
+
+.friend-connections{
+    font-size: 10px;
+    opacity: 0.6;
+    padding-top: 2px;
+}
+ .friend-add{
+    display: block;
+    font-size: 12px;
+    margin-top: auto;
+ }
+ 
+.friend-add::before{
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 23px;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 5px;
+    transform: translateY(1px);
+    background: url(images/icons/add-friend.svg) center center / contain no-repeat;
+}
+ 
+/* ----------------------------------------------------Footer------------------------------------------------------------ */
+.footer{
+    background-color: rgba(8, 0, 244, 0.715);
+    height: 200px;
+}
+
+
+/* ----------------------------------------------------header-media------------------------------------------------------------ */
+@media screen and (min-width : 430px) {
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        padding: 0 10px;
+    }
+
+    .header-nav, 
+    .logo{
+        padding: 0;
+    }
+
+    .header-nav a{
+        padding: 0 20px;
+    }
+}
+
+/* ----------------------------------------------------main-media------------------------------------------------------------ */
+@media  screen and (min-width : 850px) {
+    .site{
+        display: flex;
+    }
+
+    .profil{
+        display: block;
+    }
+
+    .sidebar{
+        flex: none;
+        display: block;
+        width: 180px;
+        background: transparent;
+    }
+
+    .sidebar a{
+        width: 100%;
+    }
+
+    .content{
+        width: 100%;
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    .aside{
+        width: 600px;
+    }
+}
