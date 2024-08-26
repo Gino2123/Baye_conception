@@ -1,0 +1,114 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    /* background-color: #f1f1f1; */
+    font-family:"Cairo", sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.6);
+    background:rgba(0, 0, 0, 0.1);
+    }
+/* ----------------------------------------------------header------------------------------------------------------------ */
+.header{
+    position: sticky;
+    top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+.search-menu{
+    display: flex;
+    align-items: center;
+}
+ .search{
+    position: relative;
+    display: flex;
+ }
+
+.search-icon{
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    vertical-align: middle;
+    margin-top: -2px;
+    /* margin-right: 8px; */
+    opacity: 0.6;
+    background: url(images/icons/search.svg) center center / contain no-repeat;
+}
+
+.search button {
+    position: relative;
+    /* right: 0;
+    top: 0;
+    bottom: 0;  */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search input[type="text"] {
+    display: inline-block;
+    position: absolute;
+    right: 50px; /* Position initiale */
+    top: -9px;
+    width: 0;
+    opacity: 0; /* Initialement transparent */
+    transition: width 0.4s linear, opacity 0.4s linear; /* Transition sur largeur et opacité */
+    font-size: 16px;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px dashed #000000;
+    border-radius: 0;
+    outline: none;
+}
+
+.search input::placeholder {
+    color: #462c86;
+  }
+  
+/* ----------------------------------Menu--------------------------- */
+.menu-btn{
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 2px;
+    background-color: #280071;
+    text-align: center;
+}
+
+.menu-icon{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-top: -2px;
+    opacity: 0.6;
+    background: url(images/icons/menu1.svg) center center / contain no-repeat;
+}
+
+.menu-list{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    /* background: #626161; */
+}
+
+.menu-list a{
+    text-decoration: none;
+    color: #270070;
+    padding: 15px 20px;
+}
+
+.menu-list a:hover{
+    color: #000000;
+}
+
+/* ------------------------------------main-------------- */
