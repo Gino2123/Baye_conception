@@ -245,7 +245,6 @@ body{
     display: inline-block;
     margin: 0 15px;
     padding: 13px;
-    border: solid 1px #280071;
     background-color: #280071;
 }
 
@@ -329,6 +328,206 @@ body{
     color: #ffff;
     font-size: 30px;
     font-weight: bold;
+}
+
+.knowmore{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.strong-desc{
+    /* display: inline-block; */
+    text-align: center;
+    color: #000000;
+    /* background-color: #959393; */
+}
+
+.strong-desc h1{
+    font-size: 2em;
+    color: #280071;
+}
+
+.strong-desc h5{
+    font-size: 18px;
+    font-weight: 500;
+    color: #111820;
+}
+
+.strong{
+    margin: 40px 30px;
+    padding: 25px 0;
+    background-color: #D7D0D0;
+    border-bottom: solid 8px #280071;
+}
+
+.strong::before{
+    content: '';
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    opacity: 0.6;
+    color: #1b0249;
+    background: url(images/icons/users.svg) center center no-repeat / contain;
+}
+
+.strong-2::before{
+    background: url(images/icons/hand-holding.svg) center center no-repeat / contain;
+}
+
+.strong-3::before{
+    background: url(images/icons/head-side.svg) center center no-repeat / contain;
+}
+
+.strong-title{
+    font-size: 24px;
+    font-weight: 500;
+    color: #111820;
+}
+
+.strong-description{
+    line-height: 1.5rem;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0 20px;
+}
+
+.desc{
+    margin: 20px 20px;
+}
+
+.desc p{
+    color: #111820;
+    font-size: 16px;
+    font-weight: lighter;
+    line-height: 2rem;
+    margin: 0 0 18px;
+}
+
+.job-offer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+    margin: 90px 10px 50px;
+    height: 250px;
+    border-radius: 5px;
+    background: url(images/water1.jpg);
+}
+
+.button-job{
+    display: flex;
+    margin: 0 15px;
+    padding: 13px;
+    align-items: center;
+    height: 70px;
+    background-color: #280071b9;
+}
+
+.button-job a{
+    color: #fbfbfb;
+    font-weight: bold;
+}
+
+/* ---------------------------------------------------------footer---------------------------------------------------------- */
+.footer{
+    color: #fff;
+}
+
+ul{
+    margin: 0;
+}
+
+.main-footer{
+    padding-bottom: 35px;
+    background-color: #270070;
+}
+
+.footer-background{
+    background: url(images/platform1.jpg);
+}
+
+.footer-description{
+    padding: 45px 30px;
+    font-size: 17px;
+    line-height: 1.5em;
+    color: #fff;
+    background-color: #280071c3;
+}
+
+.footer-description h3{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.useful{
+    padding: 0 30px;
+}
+
+.useful ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    line-height: 2em;
+}
+
+.useful li{
+    position: relative;
+    padding-left: 22px;
+}
+
+.useful li::before{
+    content: "\0025a0"; 
+    font-size: var(--e-icon-list-icon-size);
+    color: #9E263D; 
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.contacts{
+    line-height: 2rem;
+}
+
+.contacts a::before{
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 8px;
+    opacity: 0.6;
+    background: url(images/icons/location.svg) center center / contain no-repeat;
+}
+
+.mail a::before{
+    background: url(images/icons/telephone.svg) center center / contain no-repeat;
+}
+
+.social-media{
+    display: flex;
+    margin: 18px 0;
+}
+
+.social-media a{
+    margin: 0 2px;
+}
+
+.rights{
+    display: flex;
+    align-items: center;
+    height: 85px;
+    padding: 0 25px;
+    margin-top: 0;
+    background-color: #280071E8;
+}
+
+.copyright{
+    font-size: 15px;
 }
 /*--------------------------------------media-------------------*/
 @media screen and (min-width : 560px) {
