@@ -48,13 +48,33 @@ const menuBtn = document.querySelector('.menu button');
 const menuIcon = document.querySelector('.menu-icon');
 
 menuBtn.addEventListener('click', function(){
-    if(menuList.style.display === 'none'){
+    console.log('Le bouton menu a été cliqué');
+    const currentDisplay = window.getComputedStyle(menuList).display;
+    if(currentDisplay === 'none'){
         menuList.style.display = 'flex';
-        menuIcon.style.content = "url('images/icons/menu-close.svg')"
-
+        console.log('Le bouton menu en display flex');
+        menuIcon.style.content = "url('images/icons/menu-close.svg')";
     }
     else{
         menuList.style.display = 'none';
+        console.log('Le bouton menu en display none');
         menuIcon.style.content = "url('images/icons/menu1.svg')";
     }
 });
+
+// ----------------------------------------------------------Animation----------------------------------------------------
+// Slogan-overlay
+window.addEventListener('load', function() {
+    const slogan = document.querySelector('.overlay');
+    const products = document.querySelector('.product');
+    const item = document.querySelector('.item');
+    
+    slogan.style.transform = 'scale(1)';
+    products.style.transform = 'translateY(-100px)';
+    products.style.opacity = '1';
+    item.style.transform = 'translateY(0)';
+    item.style.opacity = '1';
+    
+})
+
+// Product-presentation

@@ -133,14 +133,15 @@ body{
 }
 
 .menu-list a:hover{
-    color: #000000;
+    color: #000;
 }
 
 
 
 /* ------------------------------------main-------------- */
 
-.background-video{
+
+.main-intro{
     position: relative;
     width: 100%;
     height: 75vh;
@@ -165,11 +166,13 @@ body{
 
 .overlay{
     position: absolute;
-    top: 12%;
+    top: 0;
     left: 0;
     z-index: -1;
     width: 100%;
     height: 100%;
+    transform: scale(0); /* Réduit à 50% de sa taille */
+    transition: transform 1.5s ease-in;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -194,9 +197,18 @@ body{
     margin: 0;
 }
 
+.product-presentation{
+    position: relative;
+    width: 100%;
+    /* overflow: hidden; */
+}
+
 .product{
-    position: absolute;
-    top: 85%;
+    /* position: absolute; */
+    /* top: 0; */
+    opacity: 0;
+    transform: translateY(0);
+    transition: transform 1.5s ease-in, opacity 1.5s ease;
     width: 95%;
     z-index: -1;
     padding: 20px;
@@ -214,12 +226,13 @@ body{
     font-weight: 500;
 }
 .about-us{
-    position: relative;
-    margin-top: 280px;
-    /* top: 170%; */
+    /* position: relative; */
+    transform: translateY(-50px);
+    /* margin-top: calc(280px - 190px); */
 }
 
 .illustrate img{
+    /* display: none; */
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -274,7 +287,16 @@ body{
 .areas-illustration{
     margin: 20px 10px;
     display: flex;
+    align-items: center;
     flex-direction: column;
+}
+
+.areas-illustration a{
+    padding-top: 28%;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    /* background-color: #000; */
 }
 
 .area-content {
@@ -299,6 +321,10 @@ body{
 .area-water {
     background-image: url(images/water2.jpg);
 }
+
+/* .test{
+    background-color: #000;
+} */
 
 .area-content div{
     position: relative;
