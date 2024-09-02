@@ -3,7 +3,6 @@
 }
 
 body{
-    /* background-color: #f1f1f1; */
     font-family:"Cairo", sans-serif;
     font-size: 14px;
     line-height: 1.3;
@@ -42,7 +41,6 @@ body{
     padding: 13px 0;
     margin-left: 10px;
     max-width: 138px;
-    /* height: 37px; */
 }
 
 .search-menu{
@@ -61,16 +59,12 @@ body{
     height: 25px;
     vertical-align: middle;
     margin-top: -2px;
-    /* margin-right: 8px; */
     opacity: 0.6;
     background: url(images/icons/search.svg) center center / contain no-repeat;
 }
 
 .search button {
     position: relative;
-    /* right: 0;
-    top: 0;
-    bottom: 0;  */
     background: none;
     border: none;
     cursor: pointer;
@@ -116,14 +110,12 @@ body{
     vertical-align: middle;
     margin-top: -2px;
     opacity: 0.6;
-    /* background: url(images/icons/menu1.svg) center center / contain no-repeat; */
 }
 
 .menu-list{
     display: none;
     flex-direction: column;
     width: 100%;
-    /* background: #626161; */
 }
 
 .menu-list a{
@@ -159,7 +151,6 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover; /* Important pour que la vidéo couvre toute la surface */
-    /* transform: translate(-50%, -52%); */
     z-index: -1;
 }
 
@@ -200,13 +191,10 @@ body{
 .product-presentation{
     position: relative;
     width: 100%;
-    /* overflow: hidden; */
 }
 
 .product{
-    /* position: absolute; */
-    /* top: 0; */
-    opacity: 0;
+    opacity: 1;
     transform: translateY(0);
     transition: transform 1.5s ease-in, opacity 1.5s ease;
     width: 95%;
@@ -226,28 +214,30 @@ body{
     font-weight: 500;
 }
 .about-us{
-    /* position: relative; */
     transform: translateY(-50px);
-    /* margin-top: calc(280px - 190px); */
 }
 
 .illustrate img{
-    /* display: none; */
     width: 100%;
     height: 100%;
+    translate: -99.9%;
     object-fit: contain;
 }
 
 .description{
     padding-left: 10px;
+    transform: scale(0.5); /* Réduit à 50% de sa taille */
+    transition: transform 2s ease, translate 1.5s ease-in ;    
 }
 
 .description h1{
     color: #280071;
     font-size: 30px;
+    opacity: 0;
+    transition: opacity 2s ease;
 }
 
-.description p{
+.text-description {
     color: #000000;
     font-size: 18px;
     line-height: 2rem;
@@ -310,9 +300,6 @@ body{
 .oil-gas{
     background-image: url(images/oil&gas3.jpg);
 }
-.area-tech{
-    background-image: url(images/software.jpg);
-}
 
 .area-energie {
     background-image: url(images/photovoltaic.jpg);
@@ -322,9 +309,9 @@ body{
     background-image: url(images/water2.jpg);
 }
 
-/* .test{
-    background-color: #000;
-} */
+.area-tech{
+    background-image: url(images/software.jpg);
+}
 
 .area-content div{
     position: relative;
@@ -422,6 +409,8 @@ body{
 
 .desc{
     margin: 20px 20px;
+    transform: scale(0.5); /* Réduit à 50% de sa taille */
+    transition: transform 2s ease, translate 1.5s ease-in ;   
 }
 
 .desc p{
