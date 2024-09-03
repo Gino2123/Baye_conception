@@ -3,6 +3,7 @@
 }
 
 body{
+    /* background-color: #f1f1f1; */
     font-family:"Cairo", sans-serif;
     font-size: 14px;
     line-height: 1.3;
@@ -41,6 +42,7 @@ body{
     padding: 13px 0;
     margin-left: 10px;
     max-width: 138px;
+    /* height: 37px; */
 }
 
 .search-menu{
@@ -59,12 +61,16 @@ body{
     height: 25px;
     vertical-align: middle;
     margin-top: -2px;
+    /* margin-right: 8px; */
     opacity: 0.6;
     background: url(images/icons/search.svg) center center / contain no-repeat;
 }
 
 .search button {
     position: relative;
+    /* right: 0;
+    top: 0;
+    bottom: 0;  */
     background: none;
     border: none;
     cursor: pointer;
@@ -110,12 +116,14 @@ body{
     vertical-align: middle;
     margin-top: -2px;
     opacity: 0.6;
+    /* background: url(images/icons/menu1.svg) center center / contain no-repeat; */
 }
 
 .menu-list{
     display: none;
     flex-direction: column;
     width: 100%;
+    /* background: #626161; */
 }
 
 .menu-list a{
@@ -151,6 +159,7 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover; /* Important pour que la vidéo couvre toute la surface */
+    /* transform: translate(-50%, -52%); */
     z-index: -1;
 }
 
@@ -214,8 +223,10 @@ body{
     font-weight: 500;
 }
 .about-us{
+    /* background: #000; */
     transform: translateY(-50px);
 }
+
 
 .illustrate img{
     width: 100%;
@@ -225,6 +236,7 @@ body{
 }
 
 .description{
+    /* background: #000; */
     padding-left: 10px;
     transform: scale(0.5); /* Réduit à 50% de sa taille */
     transition: transform 2s ease, translate 1.5s ease-in ;    
@@ -242,6 +254,8 @@ body{
     font-size: 18px;
     line-height: 2rem;
     font-weight: 100;
+    /* translate: 73%; */
+    
 }
 
 .button{
@@ -282,7 +296,7 @@ body{
 }
 
 .areas-illustration a{
-    padding-top: 28%;
+    padding-top: 90px;
     text-align: center;
     width: 100%;
     height: 100%;
@@ -295,58 +309,134 @@ body{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+    
 }
 
-.oil-gas{
-    background-image: url(images/oil&gas3.jpg);
-}
-
-.area-energie {
-    background-image: url(images/photovoltaic.jpg);
-}
-
-.area-water {
-    background-image: url(images/water2.jpg);
-}
-
-.area-tech{
-    background-image: url(images/software.jpg);
-}
-
-.area-content div{
-    position: relative;
-    z-index: 0;
-    width: calc(100%);
-    height: calc(100%);
+.oil-bg{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2800718b; 
+    width: 100%;
+    height: 237px;
+    background: url(images/oil&gas3.jpg) center center;
+    background-size: cover; /* Pour couvrir toute la zone */
+    position: relative; 
 }
 
-.area-content .energie-bg{
-    background-color: #765ba5af;
+.energie-bg {
+    display: flex;
+    width: 100%;
+    height: 237px;
+    background: url(images/photovoltaic.jpg) center center;
+    background-size: cover; /* Pour couvrir toute la zone */
+    position: relative; 
 }
-.area-content .water-bg{
-    background-color: #3f1313b7;
+
+.water-bg {
+    display: flex;
+    width: 100%;
+    height: 237px;
+    background: url(images/water2.jpg) center center;
+    background-size: cover; /* Pour couvrir toute la zone */
+    position: relative; 
 }
-.area-content .tech-bg{
-    background-color: #133f3da7;
+
+.tech-bg{
+    display: flex;
+    width: 100%;
+    height: 237px;
+    background: url(images/software.jpg) center center;
+    background-size: cover; /* Pour couvrir toute la zone */
+    position: relative; 
+}
+
+/* .test{
+    background-color: #000;
+} */
+
+
+.oil-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 0, 113, 0.5);
+    z-index: 1; /* S'assure que l'overlay est au-dessus de l'image */
+}
+
+.oil-bg:hover::before {
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Rend l'overlay transparent */
+}
+
+.energie-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #765ba5af; 
+    z-index: 1; /* S'assure que l'overlay est au-dessus de l'image */
+}
+
+.energie-bg:hover::before {
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Rend l'overlay transparent */
+}
+
+.water-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3f1313b7; 
+    z-index: 1; /* S'assure que l'overlay est au-dessus de l'image */
+}
+
+.water-bg:hover::before {
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Rend l'overlay transparent */
+}
+
+.tech-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #133f3da7; 
+    z-index: 1; /* S'assure que l'overlay est au-dessus de l'image */
+}
+
+.tech-bg:hover::before {
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Rend l'overlay transparent */
 }
 
 .oil,
 .energie,
 .water,
 .tech{
+    position: relative; /* Pour que le texte soit au-dessus de l'overlay */
+    z-index: 2;
     color: #ffff;
     font-size: 30px;
     font-weight: bold;
 }
 
-.knowmore{
+.knowmore {
     display: flex;
     justify-content: center;
     margin: 20px;
+}
+
+.knowmore :hover {
+    transform: translateY(-8px); 
+    transition: transform 0.3s ease; 
 }
 
 .strong-desc{
@@ -546,6 +636,7 @@ ul{
 }
 /*--------------------------------------media-------------------*/
 @media screen and (min-width : 560px) {
+    /*--------------------------------------header-------------------*/
     .main-header{
         display: none;
     }
@@ -617,5 +708,53 @@ ul{
         text-decoration: none;
         padding: 0 15px;
         
+    }
+    /*--------------------------------------main-------------------*/
+    .slogan h1{
+        font-size: 47px;
+        font-weight: 500;
+    }
+    .slogan h2{
+        font-size: 50px;
+    }
+
+    .product{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 80%;
+        margin: 1.5% auto;
+    }
+
+    .item h3{
+        padding-bottom: 20px;
+    }
+
+    .about-us{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .illustrate{
+        width: 50%;
+        /* transform: translateY(-17%); */
+    }
+
+    .illustrate img{
+        height: 120vh;
+        object-fit: fill;
+    }
+
+    .description{
+        width: 50%;
+        padding: 60px 70px;
+    }
+    .oil-gas{
+        width: 100%;
+    }
+
+    .areas-illustration{
+        flex-direction: row;
+        margin: 30px 10%;
     }
 }
