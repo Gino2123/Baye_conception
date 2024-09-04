@@ -2,45 +2,109 @@
 
 // -------------------------------------------Search textarea-----------------------------//
 
-const searchInput = document.querySelector('.search input[type="text"]');
-const searchIcon = document.querySelector('.search button');
+// const searchInput = document.querySelector('.search input[type="text"]');
+// const searchIcon = document.querySelector('.search button');
+// const mediaQuery = window.matchMedia('(max-width: 768px)');
 
-searchIcon.addEventListener('click', function() {
-    if (searchInput.style.width === '0px' || searchInput.style.width === '') {
-        searchInput.style.display = 'inline-block';
-        searchInput.offsetWidth; // Force le recalcul du style pour s'assurer que l'animation se déclenche
-        searchInput.style.width = '250px';
-        searchInput.style.opacity = '1';
-        searchInput.focus();
-    } else {
-        // Si la barre de recherche est déjà visible
-        if (searchInput.value.trim() !== '') {
-            // Soumettre la recherche ou autre action
-            console.log('Recherche soumise :', searchInput.value);
+// searchIcon.addEventListener('click', function() {
+//     if (searchInput.style.width === '0px' || searchInput.style.width === '') {
+//         searchInput.style.display = 'inline-block';
+//         searchInput.offsetWidth; // Force le recalcul du style pour s'assurer que l'animation se déclenche
+//         searchInput.style.width = '250px';
+//         searchInput.style.opacity = '1';
+//         searchInput.focus();
+//     } else {
+//         // Si la barre de recherche est déjà visible
+//         if (searchInput.value.trim() !== '') {
+//             // Soumettre la recherche ou autre action
+//             console.log('Recherche soumise :', searchInput.value);
+//         } else {
+//             // Si le champ est vide, on le cache
+//             // searchInput.style.display = 'none';
+//             searchInput.style.width = '0';
+//             searchInput.style.opacity = '0';
+//             setTimeout(() => {
+//                 searchInput.style.display = 'none';
+//             }, 400);
+//         }
+//     }
+// });
+
+
+// searchInput.addEventListener('blur', function() {
+//     setTimeout(function() {
+//         if (searchInput.value.trim() === '') {
+//             searchInput.style.width = '0';
+//             searchInput.style.opacity = '0';
+//             setTimeout(() => {
+//                 searchInput.style.display = 'none';
+//             }, 400);
+//         }
+//     }, 400);
+// });
+
+// Définir la media query
+const mediaQuery = window.matchMedia('(min-width: 560px)');
+
+// Fonction qui gère le comportement de la barre de recherche
+function handleSearchBar(val1, val2) {
+    const searchInput = document.querySelector('.search input[type="text"]');
+    const searchIcon = document.querySelector('.search button');
+
+    searchIcon.addEventListener('click', function() {
+        if (searchInput.style.width === '0px' || searchInput.style.width === '') {
+            searchInput.style.display = 'inline-block';
+            searchInput.offsetWidth; // Force le recalcul du style pour s'assurer que l'animation se déclenche
+            searchInput.style.width = val1;
+            searchInput.style.height = val2;
+            searchInput.style.opacity = '1';
+            searchInput.focus();
         } else {
-            // Si le champ est vide, on le cache
-            // searchInput.style.display = 'none';
-            searchInput.style.width = '0';
-            searchInput.style.opacity = '0';
-            setTimeout(() => {
-                searchInput.style.display = 'none';
-            }, 400);
+            // Si la barre de recherche est déjà visible
+            if (searchInput.value.trim() !== '') {
+                // Soumettre la recherche ou autre action
+                console.log('Recherche soumise :', searchInput.value);
+            } else {
+                // Si le champ est vide, on le cache
+                searchInput.style.width = '0';
+                searchInput.style.opacity = '0';
+                setTimeout(() => {
+                    searchInput.style.display = 'none';
+                }, 400);
+            }
         }
+    });
+
+    searchInput.addEventListener('blur', function() {
+        setTimeout(function() {
+            if (searchInput.value.trim() === '') {
+                searchInput.style.width = '0';
+                searchInput.style.opacity = '0';
+                setTimeout(() => {
+                    searchInput.style.display = 'none';
+                }, 400);
+            }
+        }, 400);
+    });
+}
+
+// Fonction qui sera appelée pour gérer les changements de media query
+function handleMediaQueryChange(e) {
+    if (e.matches) {
+        // Appliquer le comportement de la barre de recherche pour les écrans >= 560px
+        handleSearchBar('250px', '40px');
+    } else {
+        // Supprimer les événements associés pour les écrans < 560px si nécessaire
+        // ou appliquer un comportement différent
+        handleSearchBar('250px', '40px');
     }
-});
+}
 
+// Attacher la fonction de gestionnaire à l'écouteur de l'événement
+mediaQuery.addEventListener('change',handleMediaQueryChange);
 
-searchInput.addEventListener('blur', function() {
-    setTimeout(function() {
-        if (searchInput.value.trim() === '') {
-            searchInput.style.width = '0';
-            searchInput.style.opacity = '0';
-            setTimeout(() => {
-                searchInput.style.display = 'none';
-            }, 400);
-        }
-    }, 400);
-});
+// Exécuter immédiatement la fonction pour vérifier l'état initial
+handleMediaQueryChange(mediaQuery);
 
 // -------------------------------------------Menu-----------------------------//
 const menuList = document.querySelector('.menu-list');
@@ -63,28 +127,51 @@ menuBtn.addEventListener('click', function(){
 });
 
 // ----------------------------------------------------------Animation----------------------------------------------------
+// Load
+window.addEventListener('load', function() {
+    // const slogan = document.querySelector('.overlay');
+    // const products = document.querySelector('.product');
+    // const item = document.querySelector('.item');
+    // const illustrate = document.querySelector('.illustrate img');
+    // const description = document.querySelector('.description');
+    
+    // slogan
+    // slogan.style.transform = 'scale(1)';
+    // Product
+    products.style.transform = 'translateY(-500px)';
+    products.style.opacity = '1';
+    // Illustrate
+    // illustrate.style.translate = '0';
+    // illustrate.style.transition = 'translate 1s ease';
+    // illustrate.style.transitionDelay = '1.5s';
+    // About-description
+    // description.style.scale = '1';
+    // description.style.transition = 'scale 1.5s ease-in';
+    // description.style.transitionDelay = '1.5s';
+    
+})
 
 // Scroll
-// Indicateur pour vérifier si l'animation a été jouée
-let sloganPlayed = false; 
-let contactPlayed = false;
-let illustratePlayed = false;
-let desctitlePlayed = false;
-let descriptionPlayed = false;
-let areaPlayed = false;
-let knowmorePlayed = false;
-let strongPlayed1 = false;
-let strongPlayed2 = false;
-let strongPlayed3 = false;
-let descPlayed = false;
-let jobPlayed = false;
-let usely1Played = false;
-let usely2Played = false;
-let usely3Played = false;
+let sloganPlayed = false; // Indicateur pour vérifier si l'animation a été jouée
+let productPlayed = false; // Indicateur pour vérifier si l'animation a été jouée
+let contactPlayed = false; // Indicateur pour vérifier si l'animation a été jouée
+let illustratePlayed = false; // Indicateur pour vérifier si l'animation a été jouée
+let desctitlePlayed = false; // Indicateur pour vérifier si l'animation a été jouée
+let descriptionPlayed = false; // Indicateur pour vérifier si l'animation a été jouée
+let areaPlayed = false; // Indicateur pour vérifier si l'animation a été jouée
+let knowmorePlayed = false; // Indicateur pour vérifier si l'animation a été jouée
+let strongPlayed1 = false; // Indicateur pour vérifier si l'animation a été jouée
+let strongPlayed2 = false; // Indicateur pour vérifier si l'animation a été jouée
+let strongPlayed3 = false; // Indicateur pour vérifier si l'animation a été jouée
+let descPlayed = false; // Indicateur pour vérifier si l'animation a été jouée
+let jobPlayed = false; // Indicateur pour vérifier si l'animation a été jouée
+let usely1Played = false; // Indicateur pour vérifier si l'animation a été jouée
+let usely2Played = false; // Indicateur pour vérifier si l'animation a été jouée
+let usely3Played = false; // Indicateur pour vérifier si l'animation a été jouée
 
 document.addEventListener('scroll', function() {
-    // Select element
     const slogan = document.querySelector('.overlay');
+    const products = document.querySelector('.product');
     const contact = document.querySelector('.contact-us');
     const illustrate = document.querySelector('.illustrate img');
     const desctitle = document.querySelector('.description h1');
@@ -115,6 +202,13 @@ document.addEventListener('scroll', function() {
     if (!sloganPlayed && isInViewport(slogan)) {
         console.log('slogan')
         scaleAnimation(slogan, 500);
+        sloganPlayed = true; // Marquer l'animation comme jouée
+    }
+    
+    if (!productPlayed && isInViewport(products)) {
+        console.log('products')
+        products.style.transform = 'translateY(-100px)';
+        products.style.opacity = '1';
         sloganPlayed = true; // Marquer l'animation comme jouée
     }
     
@@ -240,7 +334,7 @@ function bounceElement(element) {
     element.style.transform = 'translateY(-100px)';
     setTimeout(function() {
         element.style.transform = 'translateY(0)';
-    }, 100); // Durée de l'animation de saut (100ms)
+    }, 100); // Durée de l'animation de saut (500ms)
 }
 
 // Element slide
@@ -260,7 +354,7 @@ function slideDown(element){
         element.style.opacity = '1'
         element.style.transform = 'translateY(0)';
         element.style.transition = 'transform 2s ease, opacity 3s ease';
-    }, 1000); // Durée de l'animation de saut (1s)
+    }, 1000); // Durée de l'animation de saut (500ms)
 }
 
 function slideUp(element){
@@ -273,7 +367,7 @@ function slideUp(element){
         element.style.opacity = '1'
         element.style.transform = 'translateY(0)';
         element.style.transition = 'transform 2s ease, opacity 3s ease';
-    }, 2000); // Durée de l'animation de saut (2s)
+    }, 2000); // Durée de l'animation de saut (500ms)
 }
 
 function scaleAnimation(element, time){   
@@ -281,5 +375,5 @@ function scaleAnimation(element, time){
     setTimeout(function() {
         element.style.transform = 'scale(1)';
         element.style.transition = 'transform 2s ease'
-    }, time); // Durée de l'animation de saut (time)
+    }, time); // Durée de l'animation de saut (500ms)
 }
