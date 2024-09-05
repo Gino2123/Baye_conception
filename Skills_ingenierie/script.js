@@ -158,7 +158,10 @@ let contactPlayed = false; // Indicateur pour vérifier si l'animation a été j
 let illustratePlayed = false; // Indicateur pour vérifier si l'animation a été jouée
 let desctitlePlayed = false; // Indicateur pour vérifier si l'animation a été jouée
 let descriptionPlayed = false; // Indicateur pour vérifier si l'animation a été jouée
-let areaPlayed = false; // Indicateur pour vérifier si l'animation a été jouée
+let area1 = false; // Indicateur pour vérifier si l'animation a été jouée
+let area2 = false; // Indicateur pour vérifier si l'animation a été jouée
+let area3 = false; // Indicateur pour vérifier si l'animation a été jouée
+let area4 = false; // Indicateur pour vérifier si l'animation a été jouée
 let knowmorePlayed = false; // Indicateur pour vérifier si l'animation a été jouée
 let strongPlayed1 = false; // Indicateur pour vérifier si l'animation a été jouée
 let strongPlayed2 = false; // Indicateur pour vérifier si l'animation a été jouée
@@ -173,10 +176,9 @@ document.addEventListener('scroll', function() {
     const slogan = document.querySelector('.overlay');
     const products = document.querySelector('.product');
     const contact = document.querySelector('.contact-us');
-    const illustrate = document.querySelector('.illustrate img');
+    const illustrate = document.querySelector('.illustrate');
     const desctitle = document.querySelector('.description h1');
     const description = document.querySelector('.description');
-    const area = document.querySelector('.area-content');
     const area_1 = document.querySelector('.oil-gas');
     const area_2 = document.querySelector('.area-energie');
     const area_3 = document.querySelector('.area-water');
@@ -231,20 +233,25 @@ document.addEventListener('scroll', function() {
         bounceElement(contact);
         contactPlayed = true; // Marquer l'animation comme jouée
     }
-    
-    if (!areaPlayed && isInViewport(area)) {
-        console.log('area content')
+
+    if (!area1 && isInViewport(area_1)){
         slideDown(area_1);
-        setTimeout(function(){
-            slideUp(area_2);
-        }, 1000);
-        setTimeout(function(){
-            slideDown(area_3);
-        }, 2000);
-        setTimeout(function(){
-            slideUp(area_4);
-        }, 3000);
-        areaPlayed = true; // Marquer l'animation comme jouée
+        area1 = true; // Marquer l'animation comme jouée
+    }
+
+    if (!area2 && isInViewport(area_2)){
+        slideUp(area_2);
+        area2 = true; // Marquer l'animation comme jouée
+    }
+
+    if (!area3 && isInViewport(area_3)){
+        slideDown(area_3);
+        area3 = true; // Marquer l'animation comme jouée
+    }
+
+    if (!area4 && isInViewport(area_4)){
+        slideUp(area_4);
+        area4 = true; // Marquer l'animation comme jouée
     }
     
     if (!knowmorePlayed && isInViewport(know)) {
