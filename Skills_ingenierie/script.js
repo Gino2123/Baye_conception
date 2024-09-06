@@ -2,47 +2,6 @@
 
 // -------------------------------------------Search textarea-----------------------------//
 
-// const searchInput = document.querySelector('.search input[type="text"]');
-// const searchIcon = document.querySelector('.search button');
-// const mediaQuery = window.matchMedia('(max-width: 768px)');
-
-// searchIcon.addEventListener('click', function() {
-//     if (searchInput.style.width === '0px' || searchInput.style.width === '') {
-//         searchInput.style.display = 'inline-block';
-//         searchInput.offsetWidth; // Force le recalcul du style pour s'assurer que l'animation se déclenche
-//         searchInput.style.width = '250px';
-//         searchInput.style.opacity = '1';
-//         searchInput.focus();
-//     } else {
-//         // Si la barre de recherche est déjà visible
-//         if (searchInput.value.trim() !== '') {
-//             // Soumettre la recherche ou autre action
-//             console.log('Recherche soumise :', searchInput.value);
-//         } else {
-//             // Si le champ est vide, on le cache
-//             // searchInput.style.display = 'none';
-//             searchInput.style.width = '0';
-//             searchInput.style.opacity = '0';
-//             setTimeout(() => {
-//                 searchInput.style.display = 'none';
-//             }, 400);
-//         }
-//     }
-// });
-
-
-// searchInput.addEventListener('blur', function() {
-//     setTimeout(function() {
-//         if (searchInput.value.trim() === '') {
-//             searchInput.style.width = '0';
-//             searchInput.style.opacity = '0';
-//             setTimeout(() => {
-//                 searchInput.style.display = 'none';
-//             }, 400);
-//         }
-//     }, 400);
-// });
-
 // Définir la media query
 const mediaQuery = window.matchMedia('(min-width: 560px)');
 
@@ -129,27 +88,9 @@ menuBtn.addEventListener('click', function(){
 // ----------------------------------------------------------Animation----------------------------------------------------
 // Load
 window.addEventListener('load', function() {
-    // const slogan = document.querySelector('.overlay');
-    // const products = document.querySelector('.product');
-    // const item = document.querySelector('.item');
-    // const illustrate = document.querySelector('.illustrate img');
-    // const description = document.querySelector('.description');
-    
-    // slogan
-    // slogan.style.transform = 'scale(1)';
-    // Product
     products.style.transform = 'translateY(-500px)';
     products.style.opacity = '1';
-    // Illustrate
-    // illustrate.style.translate = '0';
-    // illustrate.style.transition = 'translate 1s ease';
-    // illustrate.style.transitionDelay = '1.5s';
-    // About-description
-    // description.style.scale = '1';
-    // description.style.transition = 'scale 1.5s ease-in';
-    // description.style.transitionDelay = '1.5s';
-    
-})
+    })
 
 // Scroll
 let sloganPlayed = false; // Indicateur pour vérifier si l'animation a été jouée
