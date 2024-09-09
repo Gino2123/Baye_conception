@@ -728,7 +728,7 @@ width:60%;
 }
 
 .useful div{
-    width: 146px;
+    width: auto;
     padding: 5px;
 }
 
@@ -813,7 +813,13 @@ background-color: #111820;
 }
 
 /*--------------------------Footer----------------------*/
+.footer-background{
+    height: 75vh;
+    }
 
+.footer-description{
+    height: 75vh;
+}
 }
 
 @media screen and (min-width : 1200px) {
@@ -934,4 +940,5 @@ padding-bottom: 20px;
     height: 380px;
     float: left;
     }
+
 }
